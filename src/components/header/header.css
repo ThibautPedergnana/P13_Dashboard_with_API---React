@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 90px;
+  height: 91px;
+  background-color: black;
+}
+
+.container-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 28px;
+}
+
+.app-name {
+  color: red;
+  margin-left: 10.5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  gap: 220px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 500;
+}

@@ -1,0 +1,66 @@
+.content-profil {
+  display: flex;
+  flex-direction: column;
+  padding: 85px 90px;
+}
+
+.container-hello {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hello,
+.user-name {
+  font-weight: 500;
+  font-size: 48px;
+}
+
+.user-name {
+  color: #ff0101;
+}
+
+.congrats {
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 28px;
+}
+
+.container-datas {
+  display: flex;
+  margin-top: 77px;
+}
+
+.container-graph {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.duration-graph,
+.intensity-graph,
+.score-graph {
+  width: 258px;
+  height: 263px;
+}
+
+.daily-graph {
+  width: 835px;
+  height: 320px;
+  background-color: #fbfbfb;
+}
+.duration-graph {
+  background-color: #ff0101;
+  border-radius: 7px;
+}
+
+.container-graph-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper-key-data {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+}

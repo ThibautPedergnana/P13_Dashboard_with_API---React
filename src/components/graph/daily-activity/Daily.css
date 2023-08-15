@@ -1,0 +1,11 @@
+.recharts-cartesian-grid-vertical {
+  display: none;
+}
+
+.recharts-legend-wrapper {
+  display: none;
+}
+
+.duration-graph .recharts-cartesian-grid-horizontal {
+  display: none;
+}
