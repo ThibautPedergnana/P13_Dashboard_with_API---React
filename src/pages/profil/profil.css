@@ -29,6 +29,7 @@
 .container-datas {
   display: flex;
   margin-top: 77px;
+  gap: 31px;
 }
 
 .container-graph {

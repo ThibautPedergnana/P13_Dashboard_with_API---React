@@ -1,3 +1,10 @@
+.container-app {
+  max-width: 1440px;
+}
 .app {
   display: flex;
+}
+
+.wrapper-app {
+  width: 100%;
 }

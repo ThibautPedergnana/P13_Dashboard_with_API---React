@@ -1,18 +1,36 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
-export function useFetch(url) {
-  const [data, setData] = useState({});
+export function useFetch(urls) {
+  const [datas, setDatas] = useState({});
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!url) return;
+    if (urls.length === 0) return;
     setLoading(true);
     async function fetchData() {
       try {
-        const response = await fetch(url);
-        const data = await response.json();
-        setData(data);
+        // Fetch all datas from urls[]
+        // Add key to identify the resources
+        const responses = await Promise.all(
+          urls.map(async ({ url, key }) => {
+            return {
+              datas: await axios.get(url),
+              key,
+            };
+          })
+        );
+        // Format datas response
+        let datas = responses.map(({ datas, key }) => {
+          return {
+            [key]: datas.data.data,
+          };
+        });
+        // console.log(datas);
+        datas = Object.assign(...datas);
+        setDatas(datas);
+        // console.log(datas);
       } catch (err) {
         console.log(err);
         setError(true);
@@ -21,6 +39,7 @@ export function useFetch(url) {
       }
     }
     fetchData();
-  }, [url]);
-  return { data, isLoading, error };
+  }, []);
+
+  return { datas, isLoading, error };
 }

@@ -1,0 +1,22 @@
+.wrapper-content-home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.wrapper-card-user {
+  display: flex;
+
+  padding: 10px;
+  gap: 10px;
+}
+
+.container-card-user {
+  background-color: black;
+  padding: 30px;
+  color: #fff;
+  cursor: pointer;
+}

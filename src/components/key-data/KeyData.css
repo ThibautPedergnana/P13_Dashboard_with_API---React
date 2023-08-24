@@ -1,5 +1,35 @@
-.containerkey-data {
+.container-key-data {
   width: 258px;
   height: 124px;
   background-color: #fbfbfb;
+  display: flex;
+  border-radius: 5px;
+}
+
+.content-key-data {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.icon-key-data {
+  margin-left: 32px;
+}
+
+.key-data {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.number-key-data {
+  font-weight: 700;
+  font-size: 20px;
+  color: #282d30;
+}
+
+.type-key-data {
+  font-weight: 500;
+  font-size: 14px;
+  color: #74798c;
 }

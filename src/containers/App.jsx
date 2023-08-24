@@ -10,7 +10,7 @@ function App({ children }) {
       <Header />
       <div className="app">
         <SideBar />
-        <div>{children}</div>
+        <div className="wrapper-app">{children}</div>
       </div>
     </div>
   );

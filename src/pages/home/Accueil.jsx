@@ -1,25 +1,29 @@
 import React from "react";
 import App from "../../containers/App";
-import { useFetch } from "../../services/hooks/Request";
-// import ProfilCard from "../../components/profil-card/ProfilCard";
+import { useNavigate } from "react-router-dom";
+import "../home/Accueil.css";
 
 function Home() {
-  let myFetches = [];
-  myFetches.push(useFetch(`http://localhost:3000/user/12`));
-  myFetches.push(useFetch(`http://localhost:3000/user/18`));
+  const navigate = useNavigate();
 
-  console.log(myFetches);
   return (
     <App>
-      <div>Accueil</div>
-      <div>
-        {/* {myFetches.map((profil, index) => (
-          <ProfilCard
-            key={"profil-card" + index}
-            firstName={firstName}
-            lastName={lastName}
-          />
-        ))} */}
+      <div className="wrapper-content-home">
+        <h1>Accueil</h1>
+        <div className="wrapper-card-user">
+          <div
+            className="container-card-user"
+            onClick={() => navigate("/user/12")}
+          >
+            Karl Dovineau - 12
+          </div>
+          <div
+            className="container-card-user"
+            onClick={() => navigate("/user/18")}
+          >
+            Cecilia Ratorez - 18
+          </div>
+        </div>
       </div>
     </App>
   );
