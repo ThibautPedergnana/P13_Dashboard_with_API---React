@@ -100,11 +100,20 @@ function Profil() {
                 <div className="intensity-graph">
                   <Intensity datas={formatDatasPerformanceGraph()} />
                 </div>
-                <div className="score-graph">
-                  <Score
-                    datas={formatDatasScoreGraph()}
-                    size={(user.todayScore * 100 * 360) / 100}
-                  />
+                <div className="container-score-graph">
+                  <h2 className="score-title">Score</h2>
+                  <div className="score-graph">
+                    <div className="score-text">
+                      <span className="score-percentage">
+                        {user.todayScore * 100}%
+                      </span>
+                      <span className="score-objectiv">de votre objectif</span>
+                    </div>
+                    <Score
+                      datas={formatDatasScoreGraph()}
+                      size={(user.todayScore * 100 * 360) / 100}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

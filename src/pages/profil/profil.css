@@ -40,7 +40,7 @@
 
 .duration-graph,
 .intensity-graph,
-.score-graph {
+.container-score-graph {
   width: 258px;
   height: 263px;
 }
@@ -55,9 +55,47 @@
   border-radius: 7px;
 }
 
+.intensity-graph {
+  background-color: #282d30;
+}
+
 .container-graph-bottom {
   display: flex;
   justify-content: space-between;
+}
+
+.container-score-graph {
+  background-color: #fbfbfb;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.score-title {
+  margin: 24px 0 0 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #20253a;
+}
+
+.score-graph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 60px 30px;
+  border-radius: 50%;
+}
+
+.score-objectiv {
+  width: 50%;
 }
 
 .wrapper-key-data {

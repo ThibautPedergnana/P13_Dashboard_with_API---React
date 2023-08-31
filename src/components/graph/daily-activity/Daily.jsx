@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   BarChart,
   Bar,
@@ -33,7 +33,7 @@ const renderCustomizedLabel = (props) => {
 
 export default function Daily({ datas }) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer width="100%" height="80%">
       <BarChart
         width={500}
         height={300}
@@ -47,13 +47,13 @@ export default function Daily({ datas }) {
       >
         <CartesianGrid strokeDasharray="3" />
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis orientation="right" />
         <Tooltip />
         <Legend />
-        <Bar dataKey="poids" fill="#282D30" minPointSize={5}>
+        <Bar dataKey="poids" fill="#282D30" minPointSize={5} barSize={12}>
           <LabelList dataKey="name" content={renderCustomizedLabel} />
         </Bar>
-        <Bar dataKey="calories" fill="#E60000" minPointSize={10} />
+        <Bar dataKey="calories" fill="#E60000" minPointSize={10} barSize={12} />
       </BarChart>
     </ResponsiveContainer>
   );
