@@ -23,7 +23,8 @@
 .nav-bar {
   display: flex;
   flex-direction: row;
-  gap: 220px;
+  margin-right: 91px;
+  gap: 200px;
 }
 
 .nav-bar a {
@@ -31,4 +32,19 @@
   color: white;
   font-size: 24px;
   font-weight: 500;
+}
+
+@media (max-width: 1439px) {
+  .nav-bar {
+    gap: 100px;
+  }
+}
+
+@media (max-width: 1320px) {
+  .nav-bar {
+    gap: 40px;
+  }
+  .header {
+    width: 100%;
+  }
 }

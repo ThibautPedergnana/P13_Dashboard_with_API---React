@@ -4,9 +4,6 @@ import { PieChart, Pie, Cell } from "recharts";
 const COLORS = ["#ff0101"];
 
 export default function Score({ datas, size }) {
-  console.log(size);
-  console.log("start", 90);
-  console.log("end", size + 90);
   return (
     <PieChart width={220} height={220}>
       <Pie
@@ -19,6 +16,7 @@ export default function Score({ datas, size }) {
         dataKey="value"
         startAngle={90}
         endAngle={size + 90}
+        cornerRadius={20}
       >
         {datas.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

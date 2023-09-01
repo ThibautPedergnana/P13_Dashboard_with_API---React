@@ -33,7 +33,7 @@ const renderCustomizedLabel = (props) => {
 
 export default function Daily({ datas }) {
   return (
-    <ResponsiveContainer width="100%" height="80%">
+    <ResponsiveContainer width="100%" height="70%">
       <BarChart
         width={500}
         height={300}
@@ -46,14 +46,26 @@ export default function Daily({ datas }) {
         }}
       >
         <CartesianGrid strokeDasharray="3" />
-        <XAxis dataKey="name" />
-        <YAxis orientation="right" />
+        <XAxis dataKey="name" tickLine={false} />
+        <YAxis orientation="right" tickLine={false} />
         <Tooltip />
         <Legend />
-        <Bar dataKey="poids" fill="#282D30" minPointSize={5} barSize={12}>
+        <Bar
+          dataKey="poids"
+          fill="#282D30"
+          minPointSize={5}
+          barSize={12}
+          radius={[20, 20, 0, 0]}
+        >
           <LabelList dataKey="name" content={renderCustomizedLabel} />
         </Bar>
-        <Bar dataKey="calories" fill="#E60000" minPointSize={10} barSize={12} />
+        <Bar
+          dataKey="calories"
+          fill="#E60000"
+          minPointSize={10}
+          barSize={12}
+          radius={[20, 20, 0, 0]}
+        />
       </BarChart>
     </ResponsiveContainer>
   );

@@ -9,6 +9,8 @@ import Score from "../../components/graph/score/Score";
 import Duration from "../../components/graph/duration/duration";
 import { useParams } from "react-router-dom";
 import KeyData from "../../components/key-data/KeyData";
+import BlackDot from "../../assets/dot-black.png";
+import RedDot from "../../assets/dot-red.png";
 
 function Profil() {
   let { id } = useParams();
@@ -34,6 +36,7 @@ function Profil() {
       key: "performances",
     },
   ]);
+  const days = ["L", "M", "M", "J", "V", "S", "D"];
 
   if (error) {
     return <span>Il y a un problème</span>;
@@ -49,21 +52,24 @@ function Profil() {
     });
   };
   const formatDatasDurationGraph = () => {
-    return average.sessions.map((aver) => {
+    return average.sessions.map((aver, index) => {
       return {
-        day: aver.day,
+        day: days[index],
         sessionLength: aver.sessionLength,
       };
     });
   };
+
   const formatDatasPerformanceGraph = () => {
-    return performances.data.map((performance) => {
-      return {
-        subject: performances.kind[performance.kind],
-        value: performance.value,
-        kind: performance.kind,
-      };
-    });
+    return performances.data
+      .map((performance) => {
+        return {
+          subject: performances.kind[performance.kind],
+          value: performance.value,
+          kind: performance.kind,
+        };
+      })
+      .reverse();
   };
 
   const formatDatasScoreGraph = () => {
@@ -86,11 +92,34 @@ function Profil() {
             <span className="user-name">{user.userInfos.firstName}</span>
           </div>
           <span className="congrats">
-            Félicitations ! Vous avez explosé vos objectifs hier{" "}
+            Félicitations ! Vous avez explosé vos objectifs hier
           </span>
           <div className="container-datas">
             <div className="container-graph">
               <div className="daily-graph">
+                <div className="daily-graph-text">
+                  <h2 className="daily-graph-title">Activité quotidienne</h2>
+                  <div className="daily-graph-legend">
+                    <div className="daily-graph-container-mass">
+                      <img
+                        className="daily-graph-black-dot"
+                        src={BlackDot}
+                        alt="black dot"
+                      />
+                      <span className="daily-graph-mass">Poids (kg)</span>
+                    </div>
+                    <div className="daily-graph-container-calories">
+                      <img
+                        className="daily-graph-red-dot"
+                        src={RedDot}
+                        alt="red dot"
+                      />
+                      <span className="daily-graph-calories">
+                        Calories brûlées (kCal)
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <Daily datas={formatDatasDailyGraph()} />
               </div>
               <div className="container-graph-bottom">

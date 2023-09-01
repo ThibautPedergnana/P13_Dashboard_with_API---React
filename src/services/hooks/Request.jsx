@@ -13,24 +13,18 @@ export function useFetch(urls) {
       try {
         // Fetch all datas from urls[]
         // Add key to identify the resources
-        const responses = await Promise.all(
+        let responses = await Promise.all(
           urls.map(async ({ url, key }) => {
+            const datas = await axios.get(url);
             return {
-              datas: await axios.get(url),
-              key,
+              [key]: datas.data.data,
             };
           })
         );
-        // Format datas response
-        let datas = responses.map(({ datas, key }) => {
-          return {
-            [key]: datas.data.data,
-          };
-        });
-        // console.log(datas);
-        datas = Object.assign(...datas);
-        setDatas(datas);
-        // console.log(datas);
+
+        responses = Object.assign(...responses);
+
+        setDatas(responses);
       } catch (err) {
         console.log(err);
         setError(true);
@@ -38,6 +32,7 @@ export function useFetch(urls) {
         setLoading(false);
       }
     }
+
     fetchData();
   }, []);
 

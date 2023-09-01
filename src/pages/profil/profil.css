@@ -38,6 +38,38 @@
   gap: 28px;
 }
 
+.daily-graph {
+  width: 835px;
+  height: 320px;
+  background-color: #fbfbfb;
+}
+
+.daily-graph-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.daily-graph-title {
+  margin-top: 32px;
+  margin-left: 24px;
+  margin-bottom: 47px;
+  font-size: 15px;
+}
+
+.daily-graph-legend {
+  display: flex;
+  gap: 32px;
+  margin-right: 24px;
+}
+
+.daily-graph-container-mass,
+.daily-graph-container-calories {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .duration-graph,
 .intensity-graph,
 .container-score-graph {
@@ -45,11 +77,6 @@
   height: 263px;
 }
 
-.daily-graph {
-  width: 835px;
-  height: 320px;
-  background-color: #fbfbfb;
-}
 .duration-graph {
   background-color: #ff0101;
   border-radius: 7px;
@@ -74,7 +101,7 @@
 .score-title {
   margin: 24px 0 0 30px;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   color: #20253a;
 }
 
@@ -94,6 +121,12 @@
   border-radius: 50%;
 }
 
+.score-percentage {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
 .score-objectiv {
   width: 50%;
 }
@@ -102,4 +135,30 @@
   display: flex;
   flex-direction: column;
   gap: 39px;
+}
+
+.custom-tooltip {
+  background-color: white;
+  padding: 10px 20px;
+}
+
+@media (max-width: 1380px) {
+  .container-datas {
+    flex-direction: column;
+  }
+
+  .container-graph-bottom {
+    justify-content: start;
+    gap: 30px;
+  }
+
+  .content-profil {
+    padding: 45px 60px;
+  }
+
+  .wrapper-key-data {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
 }

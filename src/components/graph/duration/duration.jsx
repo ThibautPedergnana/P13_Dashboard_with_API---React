@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React from "react";
 import {
   LineChart,
   Line,
@@ -10,6 +10,11 @@ import {
 } from "recharts";
 
 export default function Duration({ datas }) {
+  const CustomTooltip = ({ active, payload, label }) => {
+    const datas = payload[0];
+    return <div className="custom-tooltip">{`${datas?.value} mins`}</div>;
+  };
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
@@ -24,14 +29,21 @@ export default function Duration({ datas }) {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="day" />
+        <XAxis
+          dataKey="day"
+          stroke="rgba(255, 255, 255, 0.5)"
+          axisLine={false}
+          tickLine={false}
+        />
 
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />} />
         <Legend />
         <Line
+          strokeWidth={1}
+          dot={false}
           type="monotone"
           dataKey="sessionLength"
-          stroke="#8884d8"
+          stroke="rgba(255, 255, 255, 0.5)"
           activeDot={{ r: 8 }}
         />
       </LineChart>
