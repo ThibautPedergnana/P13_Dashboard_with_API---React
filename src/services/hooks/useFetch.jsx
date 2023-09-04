@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export function useFetch(urls) {
+export function useFetch(urls, isMocked = false) {
   const [datas, setDatas] = useState({});
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -9,7 +9,7 @@ export function useFetch(urls) {
   useEffect(() => {
     if (urls.length === 0) return;
     setLoading(true);
-    async function fetchData() {
+    async function fetchDatas() {
       try {
         // Fetch all datas from urls[]
         // Add key to identify the resources
@@ -33,7 +33,7 @@ export function useFetch(urls) {
       }
     }
 
-    fetchData();
+    fetchDatas();
   }, []);
 
   return { datas, isLoading, error };

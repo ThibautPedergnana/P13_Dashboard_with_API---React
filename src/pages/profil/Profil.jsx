@@ -1,19 +1,22 @@
 import React from "react";
 import App from "../../containers/App";
 import "../profil/profil.css";
-import { useFetch } from "../../services/hooks/Request";
+import { useFetch } from "../../services/hooks/useFetch";
 import Loader from "../../utils/loader/Loader";
 import Daily from "../../components/graph/daily-activity/Daily";
 import Intensity from "../../components/graph/intensity/Intensity";
 import Score from "../../components/graph/score/Score";
-import Duration from "../../components/graph/duration/duration";
+import Duration from "../../components/graph/duration/Duration";
 import { useParams } from "react-router-dom";
 import KeyData from "../../components/key-data/KeyData";
 import BlackDot from "../../assets/dot-black.png";
 import RedDot from "../../assets/dot-red.png";
+import { useMock } from "../../services/hooks/useMock";
 
 function Profil() {
   let { id } = useParams();
+
+  // Custom hook to use real datas from backend
   const {
     datas: { user, activities, average, performances },
     isLoading,
@@ -36,6 +39,14 @@ function Profil() {
       key: "performances",
     },
   ]);
+
+  // Custom hook to use mocked datas
+  // const {
+  //   datas: { user, activities, average, performances },
+  //   isLoading,
+  //   error,
+  // } = useMock(["user", "activities", "average", "performances"], id);
+
   const days = ["L", "M", "M", "J", "V", "S", "D"];
 
   if (error) {
