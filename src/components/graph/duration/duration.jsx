@@ -12,6 +12,7 @@ import {
 export default function Duration({ datas }) {
   const CustomTooltip = ({ active, payload, label }) => {
     const datas = payload[0];
+    console.log(datas);
     return <div className="custom-tooltip">{`${datas?.value} mins`}</div>;
   };
 

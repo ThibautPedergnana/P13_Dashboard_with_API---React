@@ -58,7 +58,7 @@ function Profil() {
       return {
         name: index.toString(),
         poids: activity.kilogram,
-        calories: activity.calories,
+        calories: activity.calories / 4,
       };
     });
   };

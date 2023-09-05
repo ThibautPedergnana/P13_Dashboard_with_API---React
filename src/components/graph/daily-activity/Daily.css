@@ -9,3 +9,13 @@
 .duration-graph .recharts-cartesian-grid-horizontal {
   display: none;
 }
+
+.custom-tooltip-daily {
+  background-color: #ff0101;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 14px;
+  padding: 12px 12px;
+}

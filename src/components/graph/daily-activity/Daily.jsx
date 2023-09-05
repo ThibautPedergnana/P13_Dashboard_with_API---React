@@ -32,6 +32,20 @@ const renderCustomizedLabel = (props) => {
 };
 
 export default function Daily({ datas }) {
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      const datas = payload[0].payload;
+      return (
+        <div className="custom-tooltip-daily">
+          <span>{datas.poids}kg</span>
+          <span>{datas.calories * 4}kCal</span>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <ResponsiveContainer width="100%" height="70%">
       <BarChart
@@ -47,8 +61,8 @@ export default function Daily({ datas }) {
       >
         <CartesianGrid strokeDasharray="3" />
         <XAxis dataKey="name" tickLine={false} />
-        <YAxis orientation="right" tickLine={false} />
-        <Tooltip />
+        <YAxis dataKey="poids" orientation="right" tickLine={false} />
+        <Tooltip content={<CustomTooltip />} />
         <Legend />
         <Bar
           dataKey="poids"
