@@ -82,6 +82,16 @@
   border-radius: 7px;
 }
 
+.duration-graph-title {
+  font-size: 15px;
+  font-weight: 100;
+  color: rgb(255, 255, 255, 0.6);
+  margin-top: 29px;
+  margin-left: 34px;
+  margin-bottom: 20px;
+  width: 45%;
+}
+
 .intensity-graph {
   background-color: #282d30;
 }

@@ -11,7 +11,7 @@ import { useParams } from "react-router-dom";
 import KeyData from "../../components/key-data/KeyData";
 import BlackDot from "../../assets/dot-black.png";
 import RedDot from "../../assets/dot-red.png";
-import { useMock } from "../../services/hooks/useMock";
+// import { useMock } from "../../services/hooks/useMock";
 
 function Profil() {
   let { id } = useParams();
@@ -135,6 +135,9 @@ function Profil() {
               </div>
               <div className="container-graph-bottom">
                 <div className="duration-graph">
+                  <h2 className="duration-graph-title">
+                    Durée moyenne des sessions
+                  </h2>
                   <Duration datas={formatDatasDurationGraph()} />
                 </div>
                 <div className="intensity-graph">
